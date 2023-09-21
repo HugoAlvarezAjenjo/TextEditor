@@ -1,21 +1,21 @@
 package es.alumnosupm.hugoalvarezajenjo.view;
 
 import javax.swing.*;
+import java.awt.event.ActionListener;
 
 public class EditorView extends JFrame {
+    ActionListener actionListener;
 
-    JTextArea textArea;
-    JScrollPane scrollPane;
+    public JTextArea textArea;
+    public JScrollPane scrollPane;
 
-    JMenuBar menuBar;
-    JMenu fileMenu, editMenu, menuFormat, menuColor;
+    public JMenuBar menuBar;
 
-    JMenuItem miFileNew, miFileOpen, miFileSave, miFileSaveAs, miFileExit;
-
-    public EditorView () {
+    public EditorView (ActionListener actionListener) {
         super("Notepad");
         setSize(520, 520);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+        this.actionListener = actionListener;
 
         createTextArea();
         createMenuBar();
@@ -31,7 +31,7 @@ public class EditorView extends JFrame {
     }
 
     private void createMenuBar() {
-        menuBar = new BarMenu();
+        menuBar = new BarMenu(actionListener);
         setJMenuBar(menuBar);
     }
 
