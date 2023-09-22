@@ -7,15 +7,15 @@ import java.awt.event.ActionListener;
 
 public class EditorViewListerner implements ActionListener {
 
-    EditorView editorView;
-    Logic logic;
+    final EditorView editorView;
+    final Logic logic;
     public EditorViewListerner() {
         editorView = new EditorView(this);
         logic = new Logic(editorView);
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
         final String command = e.getActionCommand();
 
         switch (command) {

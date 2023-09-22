@@ -3,10 +3,7 @@ package es.alumnosupm.hugoalvarezajenjo.logic;
 import es.alumnosupm.hugoalvarezajenjo.view.EditorView;
 
 import java.awt.*;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class Logic {
     final EditorView editor;
@@ -21,6 +18,8 @@ public class Logic {
     public void newFile() {
         editor.textArea.setText("");
         editor.setTitle("New");
+        fileName = null;
+        fileAddress = null;
     }
 
     public void openFile() {
@@ -51,14 +50,35 @@ public class Logic {
     }
 
     public void saveFile() {
+        if (fileName == null) {
+            saveAsFile();
+        } else {
+            try {
+                FileWriter fileWriter = new FileWriter(fileAddress + fileName);
+                fileWriter.write(editor.textArea.getText());
+                fileWriter.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
     }
 
     public void saveAsFile() {
+        FileDialog fileDialog = new FileDialog(editor, "Save", FileDialog.SAVE);
+        fileDialog.setVisible(true);
 
+        if (fileDialog.getFile() != null) {
+            fileName = fileDialog.getFile();
+            fileAddress = fileDialog.getDirectory();
+            editor.setTitle(fileName);
+
+            saveFile();
+        }
     }
 
     public void exitProgram() {
         editor.dispose();
     }
+
 }
