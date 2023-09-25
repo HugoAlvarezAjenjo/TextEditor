@@ -17,6 +17,9 @@ public class EditorView extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.actionListener = actionListener;
 
+        ImageIcon img = new ImageIcon("art/Icono.png");
+        setIconImage(img.getImage());
+
         createTextArea();
         createMenuBar();
 
