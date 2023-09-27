@@ -11,7 +11,7 @@ import java.io.*;
  * This class interacts with the graphical user interface (GUI) provided by the EditorView class.
  *
  * @author Hugo Alvarez Ajenjo
- * @version 0.0
+ * @version 1.0
  */
 public class FileMenuActions {
     final EditorView editor;

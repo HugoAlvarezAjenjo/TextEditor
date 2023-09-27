@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
  * It extends the Swing class JFrame and contains a text area for editing text, as well as a menu bar.
  *
  * @author Hugo Alvarez Ajenjo
- * @version 0.0
+ * @version 1.0
  */
 public class EditorView extends JFrame {
     ActionListener actionListener;
@@ -30,7 +30,7 @@ public class EditorView extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.actionListener = actionListener;
 
-        ImageIcon img = new ImageIcon("art/Icono.png");
+        ImageIcon img = new ImageIcon("src/main/resources/Icono.png");
         setIconImage(img.getImage());
 
         createTextArea();

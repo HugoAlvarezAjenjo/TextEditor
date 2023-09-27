@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
  * It extends the Swing class JMenuBar.
  *
  * @author Hugo Alvarez Ajenjo
- * @version 0.0
+ * @version 1.0
  */
 public class BarMenu extends JMenuBar {
 
