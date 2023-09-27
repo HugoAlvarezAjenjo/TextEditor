@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
  */
 public class BarMenu extends JMenuBar {
 
-    public JMenu fileMenu, editMenu, menuFormat, menuTheme;
+    public JMenu fileMenu;
 
     public JMenuItem miFileNew, miFileOpen, miFileSave, miFileSaveAs, miFileExit;
 

@@ -13,7 +13,7 @@ import java.io.*;
  * @author Hugo Alvarez Ajenjo
  * @version 0.0
  */
-public class Logic {
+public class FileMenuActions {
     final EditorView editor;
 
     String fileName;
@@ -24,7 +24,7 @@ public class Logic {
      *
      * @param editorView The EditorView instance that represents the graphical user interface.
      */
-    public Logic(EditorView editorView) {
+    public FileMenuActions(EditorView editorView) {
         this.editor = editorView;
     }
 

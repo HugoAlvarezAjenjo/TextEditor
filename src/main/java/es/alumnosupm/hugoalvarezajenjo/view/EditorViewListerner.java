@@ -1,6 +1,6 @@
 package es.alumnosupm.hugoalvarezajenjo.view;
 
-import es.alumnosupm.hugoalvarezajenjo.logic.Logic;
+import es.alumnosupm.hugoalvarezajenjo.logic.FileMenuActions;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 public class EditorViewListerner implements ActionListener {
 
     final EditorView editorView;
-    final Logic logic;
+    final FileMenuActions fileMenuActions;
 
     /**
      * Constructor for the EditorViewListener class that initializes an instance of the EditorView and Logic classes.
@@ -22,7 +22,7 @@ public class EditorViewListerner implements ActionListener {
      */
     public EditorViewListerner() {
         editorView = new EditorView(this);
-        logic = new Logic(editorView);
+        fileMenuActions = new FileMenuActions(editorView);
     }
 
     /**
@@ -36,11 +36,11 @@ public class EditorViewListerner implements ActionListener {
         final String command = e.getActionCommand();
 
         switch (command) {
-            case "New" -> logic.newFile();
-            case "Open" -> logic.openFile();
-            case "Save" -> logic.saveFile();
-            case "Save As" -> logic.saveAsFile();
-            case "Exit" -> logic.exitProgram();
+            case "New" -> fileMenuActions.newFile();
+            case "Open" -> fileMenuActions.openFile();
+            case "Save" -> fileMenuActions.saveFile();
+            case "Save As" -> fileMenuActions.saveAsFile();
+            case "Exit" -> fileMenuActions.exitProgram();
         }
 
 

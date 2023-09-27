@@ -26,6 +26,7 @@ public class EditorView extends JFrame {
     public EditorView(ActionListener actionListener) {
         super("Notepad");
         setSize(520, 520);
+        setLocationRelativeTo(null);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         this.actionListener = actionListener;
 
